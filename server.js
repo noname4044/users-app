@@ -54,6 +54,10 @@ const server = http.createServer((req, res) => {
     }
 })
 
-server.listen(5137, '0.0.0.0', () => {
-    console.log('Сервер запущен!');
+const PORT = process.env.PORT || 3000;
+
+const PORT = process.env.PORT || 10000;
+
+server.listen(PORT, "0.0.0.0", () => {
+    console.log("Server running on port:", PORT);
 });

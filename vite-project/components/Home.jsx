@@ -16,11 +16,14 @@ export function Home() {
                 return
             }
 
-            const response = await axios.post('http://192.168.0.106:5137', {
-                name,
-                age,    
-                city
-            })
+            const response = await axios.post(
+                'https://users-app-6bke.onrender.com',
+            {
+    name,
+    age,
+    city
+  }
+)
             console.log(response.data)
         } catch (error) {
             console.error('Ошибка: ', error)

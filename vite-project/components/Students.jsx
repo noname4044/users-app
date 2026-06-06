@@ -5,7 +5,7 @@ export function Students() {
     const [students, setStudents] = useState([])
 
     useEffect(() => {
-        axios.get('http://192.168.0.106:5137')
+        axios.get('https://users-app-6bke.onrender.com')
             .then((response) => {
                 setStudents(response.data)
             })

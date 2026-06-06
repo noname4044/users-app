@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+export const API = 'https://users-app-9lvx.onrender.com'
 
 export function Students() {
     const [students, setStudents] = useState([])
 
     useEffect(() => {
-        axios.get('https://users-app-6bke.onrender.com')
+        axios.get(API)
             .then((response) => {
                 setStudents(response.data)
             })
@@ -14,13 +15,13 @@ export function Students() {
 
     const clearBd = async () => {
     try {
-        await axios.delete('https://users-app-9lvx.onrender.com', {
+        await axios.delete(API, {
             headers: {
                 'admin-key': '12345'
             }
         })
 
-        const res = await axios.get('https://users-app-9lvx.onrender.com')
+        const res = await axios.get(API)
         setStudents(res.data)
 
         alert('База очищена!')

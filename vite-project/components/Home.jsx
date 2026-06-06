@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from 'axios'
+import { API } from "./Students"
 
 
 export function Home() {
@@ -17,7 +18,7 @@ export function Home() {
             }
 
             const response = await axios.post(
-                'https://users-app-9lvx.onrender.com',
+                API,
             {
     name,
     age,

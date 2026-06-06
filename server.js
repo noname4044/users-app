@@ -5,9 +5,25 @@ import db from './db.js'
 const server = http.createServer((req, res) => {
 
     res.setHeader('Access-Control-Allow-Origin', '*')
-    res.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS,GET')
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+    res.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS,GET,DELETE')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type', 'admin-key')
 
+    if (req.method === 'DELETE') {
+
+    if (req.headers['admin-key'] === '12345') {
+
+        db.prepare('DELETE FROM students').run()
+
+        res.setHeader('Content-Type', 'application/json')
+        res.end(JSON.stringify({ message: 'Все удалено' }))
+
+    } else {
+        res.writeHead(403)
+        res.end(JSON.stringify({ message: 'Нет доступа!' }))
+    }
+
+    return
+}
 
     if (req.method === 'OPTIONS') {
         res.writeHead(204)
@@ -33,7 +49,7 @@ const server = http.createServer((req, res) => {
         })
 
         req.on('end', () => {
-            const data = JSON.parse(body)
+            const data = JSON.parse(body || '{}')
             db.prepare(`
                 INSERT INTO students (name, age, city)
                 VALUES (?, ?, ?)

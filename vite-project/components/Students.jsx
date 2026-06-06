@@ -11,10 +11,34 @@ export function Students() {
             })
     }, [])
 
+
+    const clearBd = async () => {
+    try {
+        await axios.delete('https://users-app-6bke.onrender.com', {
+            headers: {
+                'admin-key': '12345'
+            }
+        })
+
+        const res = await axios.get('https://users-app-6bke.onrender.com')
+        setStudents(res.data)
+
+        alert('База очищена!')
+    } catch (error) {
+        console.error(error)
+    }
+}
+
     return (
         <>
             <h1 className="students-title">Пользователи</h1>
+            <button onClick={clearBd}
+            className="clear-bd">
+                Очистить базу данных
+                </button>
+
             <div className="students-container">
+                
                 {students.map((student, index) => (
                     <div key={index} className="student-card">
                         <h3 className="student-name">{student.name}</h3>

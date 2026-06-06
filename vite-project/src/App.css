@@ -259,3 +259,29 @@ footer {
 
     margin-top: 30px;
 }
+
+.clear-bd {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 10px 0;
+}
+
+.clear-bd:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+.clear-bd:active {
+    transform: scale(0.98);
+}
+
+.clear-bd:disabled {
+    background: #999;
+    cursor: not-allowed;
+}

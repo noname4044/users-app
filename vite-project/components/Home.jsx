@@ -17,7 +17,7 @@ export function Home() {
             }
 
             const response = await axios.post(
-                'https://users-app-6bke.onrender.com',
+                'https://users-app-9lvx.onrender.com',
             {
     name,
     age,

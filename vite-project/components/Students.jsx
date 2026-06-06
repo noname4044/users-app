@@ -14,13 +14,13 @@ export function Students() {
 
     const clearBd = async () => {
     try {
-        await axios.delete('https://users-app-6bke.onrender.com', {
+        await axios.delete('https://users-app-9lvx.onrender.com', {
             headers: {
                 'admin-key': '12345'
             }
         })
 
-        const res = await axios.get('https://users-app-6bke.onrender.com')
+        const res = await axios.get('https://users-app-9lvx.onrender.com')
         setStudents(res.data)
 
         alert('База очищена!')

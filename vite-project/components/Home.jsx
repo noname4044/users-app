@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from 'axios'
-import { API } from "./Students"
+import { API } from "../../ backend/api/api"
+
 
 
 export function Home() {

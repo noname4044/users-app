@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-export const API = 'https://users-app-9lvx.onrender.com'
-
+import { API } from "../../ backend/api/api"
+;
 export function Students() {
     const [students, setStudents] = useState([])
 

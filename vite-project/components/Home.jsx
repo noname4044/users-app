@@ -46,12 +46,12 @@ export function Home() {
                         <label htmlFor="name">Введите ваше имя...</label>
                     </div>
                     <div className="input-box">
-                        <input id="name" placeholder=" " value={name} onChange={(e) => setName(e.target.value)} />
+                        <input id="name" placeholder=" " value={age} onChange={(e) => setAge(e.target.value)} />
                         <label htmlFor="name">Введите ваш возраст...</label>
                     </div>
 
                     <div className="input-box">
-                        <input id="name" placeholder=" " value={name} onChange={(e) => setName(e.target.value)} />
+                        <input id="name" placeholder=" " value={city} onChange={(e) => setCity(e.target.value)} />
                         <label htmlFor="name">Введите ваш город...</label>
                     </div>
 

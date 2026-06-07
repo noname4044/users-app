@@ -5,8 +5,8 @@ export function Nav(){
         <>
         <header>
             <nav>
-                <Link to={'/'}>Главная</Link>
-                <Link to={'/students'}>Пользователи</Link>
+                <h1><Link to={'/'}>Главная</Link></h1>
+                <h1><Link to={'/students'}>Пользователи</Link></h1>
             </nav>
         </header>
         </>

@@ -209,22 +209,37 @@ footer {
 }
 
 .student-card {
-    background: rgba(255, 255, 255, 0.95);
+    position: relative;
+    background: rgba(255, 255, 255, 0.92);
 
-    border-radius: 20px;
-    padding: 24px;
+    border-radius: 18px;
+    padding: 20px;
 
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 
-    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.06);
+
+    transition: 0.3s ease;
+
+    overflow: hidden;
+}
+
+.student-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 5px;
+    height: 100%;
+
+    background: linear-gradient(180deg, #667eea, #764ba2);
 }
 
 .student-card:hover {
     transform: translateY(-6px);
 
-    box-shadow:
-        0 20px 35px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.18);
 }
 
 .student-name {
@@ -274,4 +289,52 @@ footer {
 .clear-bd:hover {
     background: #c0392b;
     transform: scale(1.05);
+}
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.input-box input:focus {
+  border-color: #4f46e5;
+}
+
+.input-box label {
+  position: absolute;
+  left: 0px;
+  top: 12px;
+  color: gray;
+  transition: 0.2s ease;
+  pointer-events: none;
+
+  background: var(--bg);
+  padding: 0 6px;
+}
+
+/* когда фокус или есть текст */
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+  top: -18px;
+  font-size: 12px;
+  color: #4f46e5;
+}
+
+.form-title {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

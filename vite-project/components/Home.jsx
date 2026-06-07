@@ -19,12 +19,12 @@ export function Home() {
 
             const response = await axios.post(
                 API,
-            {
-    name,
-    age,
-    city
-  }
-)
+                {
+                    name,
+                    age,
+                    city
+                }
+            )
             console.log(response.data)
         } catch (error) {
             console.error('Ошибка: ', error)
@@ -40,22 +40,23 @@ export function Home() {
         <>
             <div className="page">
                 <div className='style-form'>
-                    <h1>Добавление пользователья</h1>
-                    <input type="text" value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder='Введите ваше имя...' />
+                    <h1 className="form-title">Добавление пользователя</h1>
+                    <div className="input-box">
+                        <input id="name" placeholder=" " value={name} onChange={(e) => setName(e.target.value)} />
+                        <label htmlFor="name">Введите ваше имя...</label>
+                    </div>
+                    <div className="input-box">
+                        <input id="name" placeholder=" " value={name} onChange={(e) => setName(e.target.value)} />
+                        <label htmlFor="name">Введите ваш возраст...</label>
+                    </div>
 
-                    <input type="text" value={age}
-                        onChange={(e) => setAge(e.target.value)}
-                        placeholder='Введите ваш возраст...' />
-
-
-                    <input type="text" value={city}
-                        onChange={(e) => setCity(e.target.value)}
-                        placeholder='Введите ваш город...' />
+                    <div className="input-box">
+                        <input id="name" placeholder=" " value={name} onChange={(e) => setName(e.target.value)} />
+                        <label htmlFor="name">Введите ваш город...</label>
+                    </div>
 
                     <button onClick={sendData} className='btn-add-student'>
-                        Добавить пользователья
+                        Добавить пользователя
                     </button>
 
                     <p></p>
